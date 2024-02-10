@@ -12,7 +12,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
     if(password_verify($attempt,$hashed)){
         $_SESSION['name']=$row["surname"];
         if (!isset($_SESSION['backURL'])){
-            $backURL= "users.php"; 
+            $backURL= "/"; 
         }else{
             $backURL=$_SESSION['backURL'];
         }
