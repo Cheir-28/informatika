@@ -27,7 +27,8 @@ $stmt->closeCursor();
 <?php
 include_once("connection.php");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblPupilStudies;
-CREATE TABLE TblPupilStudies(Subjectid INT(4),
+CREATE TABLE TblPupilStudies(
+Subjectid INT(4),
 Userid INT(4),
 Classposition INT(2),
 Classgrade  CHAR(1),
