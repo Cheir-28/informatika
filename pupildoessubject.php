@@ -8,12 +8,20 @@
 
 <form action="/users.php">
   <label for="cars">Choose a car:</label>
-  <select name="cars" id="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
-  </select>
+  <select name = "student">
+<?php
+include_once('connection.php');
+$stmt = $conn->prepare("SELECT * FROM TblUsers WHERE Role = 0 ORDER BY Surname ASC");
+$stmt->execute();
+
+
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+{
+	echo('<option value='.$row["UserID"].'>'.$row["Surname"].', '.$row["Forename"].'</option>');
+}
+?>
+</select>
+
   <br><br>
   <input type="submit" value="Submit">
 </form>
