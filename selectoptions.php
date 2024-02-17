@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Options</title>
+    <h1>User Options</h1>
 </head>
 <body>
 
 <form action="showoptions.php"  method = "post">
 
   Student:<select name="Name">
-  <?php
+    <?php
 	include_once('connection.php');
-	$stmt = $conn->prepare("SELECT * FROM TblUser WHERE role=0 ORDER BY Surname ASC");
+	$stmt = $conn->prepare("SELECT * FROM TblUsers WHERE role=0 ORDER BY Surname ASC");
 	$stmt->execute();
 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 	{

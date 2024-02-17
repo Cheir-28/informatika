@@ -6,9 +6,9 @@
 <body>
 <?php
 include_once('connection.php');
-$stmt = $conn->prepare("SELECT tblsubjects.Subjectname as sn FROM Tblpupilstudies 
-INNER JOIN tblsubjects 
-ON tblsubjects.SubjectID=tblpupilstudies.SubjectID 
+$stmt = $conn->prepare("SELECT TblSubjects.Subjectname as sn FROM TblPupilstudies 
+INNER JOIN TblSubjects 
+ON TblSubjects.SubjectID=TblPupilstudies.SubjectID 
 WHERE UserID=:selecteduser");
 
 $stmt->bindParam(':selecteduser', $_POST["Name"]);
