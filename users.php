@@ -1,11 +1,11 @@
-<?php
-session_start(); 
-if (!isset($_SESSION['name']))
-{   
-    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
-    header("Location:login.php");
-}
-?>
+<!-- <?php
+//session_start(); 
+//if (!isset($_SESSION['name']))
+//{   
+    //$_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
+    //header("Location:login.php");
+//}
+?> -->
 
 <!DOCTYPE html>
 <html>
@@ -42,6 +42,7 @@ if (!isset($_SESSION['name']))
             <option value="Agender">Agender</option>
             <option value="Androgyne">Androgyne</option>
             <option value="Androgynous">Androgynous</option>
+            <option value="Attack helicopter">Attack helicopter</option>
             <option value="Bigender">Bigender</option>
             <option value="Cis">Cis</option>
             <option value="Cisgender">Cisgender</option>
@@ -95,6 +96,7 @@ if (!isset($_SESSION['name']))
             <option value="Transsexual Person">Transsexual Person</option>
             <option value="Transsexual Woman">Transsexual Woman</option>
             <option value="Two-Spirit">Two-Spirit</option>
+            <option value="BTC">BTC</option>
         </select>
         <br>
         
