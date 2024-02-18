@@ -9,21 +9,21 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 { 
     $hashed= $row['Pword'];
     $attempt= $_POST['passwd'];
+
     if(password_verify($attempt,$hashed)){
-        $_SESSION['name']=$row["surname"];
+        $_SESSION["name"]=$row["Surname"];
         if (!isset($_SESSION['backURL'])){
             $backURL= "/"; 
         }else{
             $backURL=$_SESSION['backURL'];
         }
-        header('Location: ' . $backURL);
         unset($_SESSION['backURL']);
-        
+        header('Location: ' . $backURL);
+
     }else{
         header('Location: login.php');
     }
 }
 $conn=null;
 ?>
-
 

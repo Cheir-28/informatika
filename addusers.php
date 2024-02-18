@@ -1,6 +1,5 @@
 <?php
 header('Location: users.php');
-$hashed_password = password_hash($_POST["Pword"], PASSWORD_DEFAULT);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -19,6 +18,8 @@ try{
             $role=2;
             break;
     }
+
+    $hashed_password = password_hash($_POST["Pword"], PASSWORD_DEFAULT);
 
     $stmt = $conn->prepare("INSERT INTO TblUsers (UserID,Gender,Surname,Forename,Password,House,Year,Role)
                             VALUES (null,:gender,:surname,:forename,:password,:house,:year,:role)");
