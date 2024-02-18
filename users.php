@@ -22,10 +22,12 @@
         <a class="navbar-brand" href="users.php">WebSiteName</a>
         </div>
         <ul class="nav navbar-nav">
-        <li class="active"><a href="users.php">Home(users)</a></li>
+        <li class="active"><a href="users.php">users</a></li>
         <li><a href="subjects.php">subjects</a></li>
         <li><a href="login.php">login</a></li>
         <li><a href="pupildoessubject.php">pupildoessubject</a></li>
+        <li><a href="selectoption.php">selectoption</a></li>
+        <li><a href="showoption.php">showoption</a></li>
         </ul>
     </div>
     </nav>
