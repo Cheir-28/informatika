@@ -9,6 +9,5 @@
 
 <button onclick="location.href='login.php'"> Prihlasit se </button>
 
-
 </body>
 </html>
