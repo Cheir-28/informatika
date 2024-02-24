@@ -33,6 +33,10 @@ session_start();
   <input type="submit" value="Login">
 </form>
 
+<br><br><br><br><br><br><br><br><br>
+<form action='adminlogin.php' method= 'post'>
+  <input type='submit' value= 'Prihlas'>
+</form>
 
 </body>
 </html>
