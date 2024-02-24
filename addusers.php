@@ -19,8 +19,6 @@ try{
             break;
     }
 
-    $hashed_password = password_hash($_POST["Pword"], PASSWORD_DEFAULT);
-
     $stmt = $conn->prepare("INSERT INTO TblUsers (UserID,Gender,Surname,Forename,Password,House,Year,Role)
                             VALUES (null,:gender,:surname,:forename,:password,:house,:year,:role)");
 
@@ -28,7 +26,7 @@ try{
     $stmt->bindParam(':surname', $_POST["surname"]);
     $stmt->bindParam(':house', $_POST["house"]);
     $stmt->bindParam(':year', $_POST["year"]);
-    $stmt->bindParam(':password', $hashed_password);
+    $stmt->bindParam(':password', $_POST['passwd']);
     $stmt->bindParam(':gender', $_POST["gender"]);
     $stmt->bindParam(':role', $role);
     $stmt->execute();
@@ -41,6 +39,3 @@ catch(PDOException $e)
 
 $conn=null;
 ?>
-
-
-

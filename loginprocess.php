@@ -7,9 +7,17 @@ $stmt->bindParam(':username', $_POST['Username']);
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 { 
-    $hashed= $row['Pword'];
-    $attempt= $_POST['passwd'];
+    $hashed= $hashed_password;
+    $attempt= $_POST['Pword'];
+    $_SESSION['heslo_zadany'] = $attempt;
+    $_SESSION['heslo_fetched'] = $hashed;
 
+    if (password_verify($attempt,$hashed)) {
+        $_SESSION["fuj"]="gr";
+      } else {
+        $_SESSION['ble'] = 'sajk';
+      }
+    
     if(password_verify($attempt,$hashed)){
         $_SESSION["name"]=$row["Surname"];
         if (!isset($_SESSION['backURL'])){
@@ -24,5 +32,5 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         header('Location: login.php');
     }
 }
+
 $conn=null;
-?>

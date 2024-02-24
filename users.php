@@ -1,11 +1,11 @@
-<!-- <?php
-//session_start(); 
-//if (!isset($_SESSION['name']))
-//{   
-    //$_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
-    //header("Location:login.php");
-//}
-?> -->
+<?php
+session_start(); 
+if (!isset($_SESSION['name']))
+{   
+    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
+    header("Location:login.php");
+}
+?> 
 
 <!DOCTYPE html>
 <html>
@@ -26,8 +26,8 @@
         <li><a href="subjects.php">subjects</a></li>
         <li><a href="login.php">login</a></li>
         <li><a href="pupildoessubject.php">pupildoessubject</a></li>
-        <li><a href="selectoption.php">selectoption</a></li>
-        <li><a href="showoption.php">showoption</a></li>
+        <li><a href="selectoptions.php">selectoptions</a></li>
+        <li><a href="showoptions.php">showoptions</a></li>
         </ul>
     </div>
     </nav>
@@ -120,7 +120,7 @@
             {
             echo($row["Forename"]." ".$row["Surname"]. " - ". $row["House"]. "<br>");
             }
-
+    print($_SESSION['name']);
 
 ?>
 

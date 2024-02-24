@@ -1,10 +1,10 @@
 <?php
-//session_start(); 
-//if (!isset($_SESSION['name']))
-//{   
-   //$_SESSION['backURL'] = $_SERVER['REQUEST_URI']; 
-   //header("Location:login.php");
-//}
+session_start(); 
+/*if (!isset($_SESSION['name']))
+{   
+   $_SESSION['backURL'] = $_SERVER['REQUEST_URI']; 
+   header("Location:login.php");
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -26,19 +26,25 @@
       <li><a href="subjects.php">subjects</a></li>
       <li><a href="login.php">login</a></li>
       <li><a href="pupildoessubject.php">pupildoessubject</a></li>
-      <li><a href="selectoption.php">selectoption</a></li>
-      <li><a href="showoption.php">showoption</a></li>
+      <li><a href="selectoptions.php">selectoptions</a></li>
+      <li><a href="showoptions.php">showoptions</a></li>
+      <li><a href="logout.php">logout</a></li>
     </ul>
   </div>
 </nav>
 
-<form action="loginprocess.php" method= "post">
+<form action="loginprocess_unhashed.php" method= "post">
  User name:<input type="text" name="Username"><br>
  Password:<input type="password" name="Pword"><br>
   <input type="submit" value="Login">
 </form>
 
-<h1><?php echo $_SESSION["name"] ?></h1>
+<h1>
+  <?php  
+    print($_SESSION['backURL']);
+    print($_SESSION['name']);
+  ?>
+</h1>
 
 </body>
 </html>
