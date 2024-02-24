@@ -27,7 +27,6 @@ if (!isset($_SESSION['name']))
         <li><a href="login.php">login</a></li>
         <li><a href="pupildoessubject.php">pupildoessubject</a></li>
         <li><a href="selectoptions.php">selectoptions</a></li>
-        <li><a href="showoptions.php">showoptions</a></li>
         </ul>
     </div>
     </nav>
@@ -113,14 +112,14 @@ if (!isset($_SESSION['name']))
 </html>
 
 <?php
-    include_once('connection.php');
+    /* include_once('connection.php');
     $stmt = $conn->prepare("SELECT * FROM TblUsers");
     $stmt->execute();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             {
             echo($row["Forename"]." ".$row["Surname"]. " - ". $row["House"]. "<br>");
-            }
-    print($_SESSION['name']);
+            }*/
+            
 
 ?>
 

@@ -1,10 +1,5 @@
 <?php
 session_start(); 
-/*if (!isset($_SESSION['name']))
-{   
-   $_SESSION['backURL'] = $_SERVER['REQUEST_URI']; 
-   header("Location:login.php");
-}*/
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +22,6 @@ session_start();
       <li><a href="login.php">login</a></li>
       <li><a href="pupildoessubject.php">pupildoessubject</a></li>
       <li><a href="selectoptions.php">selectoptions</a></li>
-      <li><a href="showoptions.php">showoptions</a></li>
       <li><a href="logout.php">logout</a></li>
     </ul>
   </div>
@@ -39,12 +33,6 @@ session_start();
   <input type="submit" value="Login">
 </form>
 
-<h1>
-  <?php  
-    print($_SESSION['backURL']);
-    print($_SESSION['name']);
-  ?>
-</h1>
 
 </body>
 </html>
